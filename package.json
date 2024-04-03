@@ -1,0 +1,20 @@
+{
+  "name": "etch-a-sketch",
+  "version": "1.0.0",
+  "description": "Interactive etch-a-sketch based in JavaScript",
+  "main": "Etch-a-Sketch.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TahjayW/Etch-a-Sketch.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TahjayW/Etch-a-Sketch/issues"
+  },
+  "homepage": "https://github.com/TahjayW/Etch-a-Sketch#readme"
+}

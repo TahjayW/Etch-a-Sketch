@@ -1,0 +1,29 @@
+Outline of Etch-a-Sketch
+
+This webpage will consist of the following:
+
+>A Grid of 16x16 Square Divs
+    -Divs Will be created in JS, not HTML
+    -"Container" div to keep the other divs in
+    -Flexbox to make the divs appear as a grid
+    -Keep minimal, uniform size of margins/borders
+    -Don't use CSS Grid
+>Hover effect so that grid divs change color when mouse passes over them
+    -However method? Event listeners
+    -Change color through background color or assign a class?
+
+>Button to top of the screen that will send user a popup for # of squares
+per side of the new grid
+
+>Existing grid should be removed, new grind generated in same total space as before
+(960px wide)
+    -Set limit for grid items to be a maximum of 100
+    -JS function run when a button is clicked
+    -research prompt s
+    -Ideally, entering 64 gives a 64x64 grid pop up
+
+>BONUS BONUS BONUS
+-Randomize RGB values on each interaction
+-Implement progressive darkenning effect where every interaction
+darkens a square by 10%. Black square in 10 interactions.
+Opacity is useful here.

@@ -1,0 +1,22 @@
+Setting up divs 
+function getSize(){
+    get userInput;
+    if (userInput === tooBig){
+        console.log("incorrect size.");
+    } else {
+const gridSize = userInput^2;
+const gridArrary = [gridSize];
+    }
+    
+
+}
+ 
+
+for (index = 0; index < gridSize, index++){
+gridArrary[i] = document.createElement("aDiv");
+gridArrary.[i].id = "aDiv" + i; // DOES THIS WORK??
+}
+
+
+const divContainer = document.ele(div);
+
