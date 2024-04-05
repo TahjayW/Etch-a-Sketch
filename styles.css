@@ -1,0 +1,21 @@
+.liveCells {
+    height: auto;
+     
+    background-color: rgb(247, 10, 10);
+    flex: 1;
+}
+
+body{
+    display: flex;
+    width: 960px;
+    height: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.deadCells {
+    height: 30px;
+    width: 30px;
+    background-color: blue;
+    flex:1;
+}

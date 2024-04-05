@@ -27,7 +27,13 @@ generatedGrid.append(gridCell);
 body.append(generatedGrid);
 
 
+//Bubbling to have live cells send mouse event to body, change class to deadcell
 
+body.addEventListener("mouseover", (event)=> {
+
+     event.target.style.color = 'black';
+     event.target.className = "deadCells";
+});
 
 
 
