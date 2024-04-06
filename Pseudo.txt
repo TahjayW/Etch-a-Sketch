@@ -18,5 +18,7 @@ gridArrary.[i].id = "aDiv" + i; // DOES THIS WORK??
 }
 
 
+
+
 const divContainer = document.ele(div);
 
