@@ -6,6 +6,10 @@ function getSize() {
     }
     return gridSize;
 }
+
+
+ 
+
 //Add elements to HTML via selector
 const body = document.querySelector("body");
 //Get size from user
@@ -15,6 +19,11 @@ const generatedGridContainer = document.createElement("div");
 const cellsPerRow = Math.sqrt(gridSize);
 generatedGridContainer.setAttribute("id", "container")
 const gridCellDimension = (100 / cellsPerRow) + "%";
+ 
+
+ 
+
+    
 //Create and Populate Grid
 for (i = 0; i < gridSize; i++) {
     const gridCell = document.createElement("div");
@@ -35,11 +44,38 @@ generatedGridContainer.addEventListener("mouseover", (event) => {
         event.target.className = "deadCells";
         event.target.style.minWidth = gridCellDimension;
         event.target.style.minHeight = gridCellDimension;
-        
+
     }
 
 });
 
+
+
+
+
+
+//Reset Clause
+const resetButton = document.createElement("button");
+resetButton.setAttribute("id", "btn");
+resetButton.textContent = "Reset";
+
+resetButton.addEventListener("click", (event) => {
+     
+const resetGrid= document.querySelectorAll(".deadCells");
+
+resetGrid.forEach(element => {
+    console.log(element.classList);
+    element.classList.replace("deadCells", "liveCells");
+    element.style.backgroundColor = 'white';
+    
+});
+
+     
+     
+
+});
+
+body.append(resetButton);
 
 
 

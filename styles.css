@@ -1,4 +1,11 @@
- 
+.liveCells{
+    color:white;
+    background-color: white;
+} 
+.deadCells{
+    color: black;
+    background-color: black;
+}
 
 body {
     display: flex;
@@ -18,3 +25,4 @@ body {
 
 
 }
+ 
