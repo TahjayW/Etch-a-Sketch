@@ -63,6 +63,7 @@ resetButton.addEventListener("click", (event) => {
      
 const resetGrid= document.querySelectorAll(".deadCells");
 
+//This changes deadCells to liveCells but needs to the overall gridSize. To Revist later
 resetGrid.forEach(element => {
     console.log(element.classList);
     element.classList.replace("deadCells", "liveCells");
