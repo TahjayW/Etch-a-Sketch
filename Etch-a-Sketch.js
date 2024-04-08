@@ -1,5 +1,8 @@
+//Global Variables
+let gridSize, cellsPerRow, gridCellDimension, generatedGridContainer;
+
 function getSize() {
-    const gridSize = prompt("Hey, how big do you want this thing?");
+     gridSize = prompt("Hey, how big do you want this thing?");
     if (gridSize > 99) {
         alert("That's too big");
         getSize();
@@ -8,35 +11,45 @@ function getSize() {
 }
 
 
- 
+
 
 //Add elements to HTML via selector
 const body = document.querySelector("body");
-//Get size from user
-const gridSize = Math.pow(getSize(), 2);
-//Defining cell dimensions
-const generatedGridContainer = document.createElement("div");
-const cellsPerRow = Math.sqrt(gridSize);
-generatedGridContainer.setAttribute("id", "container")
-const gridCellDimension = (100 / cellsPerRow) + "%";
- 
 
- 
+makeGrid();
 
-    
-//Create and Populate Grid
-for (i = 0; i < gridSize; i++) {
-    const gridCell = document.createElement("div");
-    gridCell.id = 'div #' + i;
-    gridCell.className = "liveCells";
-    gridCell.style.backgroundColor = "white";
-    gridCell.style.minWidth = gridCellDimension;
-    gridCell.style.minHeight = gridCellDimension;
-    generatedGridContainer.append(gridCell);
+
+
+function makeGrid() {
+    //Get size from user
+    gridSize = Math.pow(getSize(), 2);
+    //Defining cell dimensions
+    generatedGridContainer = document.createElement("div");
+    cellsPerRow = Math.sqrt(gridSize);
+    generatedGridContainer.setAttribute("id", "container");
+    gridCellDimension = (100 / cellsPerRow) + "%";
+    //Create and Populate Grid
+    for (i = 0; i < gridSize; i++) {
+        let gridCell = document.createElement("div");
+
+        gridCell.id = 'div #' + i;
+        gridCell.className = "liveCells";
+        gridCell.style.backgroundColor = "white";
+        gridCell.style.minWidth = gridCellDimension;
+        gridCell.style.minHeight = gridCellDimension;
+        generatedGridContainer.append(gridCell);
+        //Add grid to doc
+
+
+    }
+
+    body.append(generatedGridContainer);
 }
-//Add grid to doc
-body.append(generatedGridContainer);
-//Bubbling to have live cells send mouse event to body, change class to deadcell
+
+
+
+//BColor change logic
+
 generatedGridContainer.addEventListener("mouseover", (event) => {
     if (event.target.className === "liveCells") {
         event.stopPropagation();
@@ -53,26 +66,30 @@ generatedGridContainer.addEventListener("mouseover", (event) => {
 
 
 
-
 //Reset Clause
 const resetButton = document.createElement("button");
 resetButton.setAttribute("id", "btn");
 resetButton.textContent = "Reset";
 
 resetButton.addEventListener("click", (event) => {
-     
-const resetGrid= document.querySelectorAll(".deadCells");
 
-//This changes deadCells to liveCells but needs to the overall gridSize. To Revist later
-resetGrid.forEach(element => {
-    console.log(element.classList);
-    element.classList.replace("deadCells", "liveCells");
-    element.style.backgroundColor = 'white';
-    
-});
+    const itemToRemove  = document.getElementById("#container");
+    while (itemToRemove.firstChild){
+        itemToRemove.removeChild(itemToRemove.firstChild );
+    }
+    //This changes deadCells to liveCells but needs to the overall gridSize. To Revist later
 
-     
-     
+    resetGrid.forEach(element => {
+        console.log(element.classList);
+        element.remove();
+        /*
+        element.classList.replace("deadCells", "liveCells");
+        element.style.backgroundColor = 'white';
+        */
+    });
+
+
+
 
 });
 
