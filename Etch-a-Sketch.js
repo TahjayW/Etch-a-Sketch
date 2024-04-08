@@ -40,15 +40,7 @@ function makeGrid() {
         generatedGridContainer.append(gridCell);
         //Add grid to doc
 
-
-    }
-
-    body.append(generatedGridContainer);
-}
-
-
-
-//BColor change logic
+        //BColor change logic
 
 generatedGridContainer.addEventListener("mouseover", (event) => {
     if (event.target.className === "liveCells") {
@@ -63,6 +55,16 @@ generatedGridContainer.addEventListener("mouseover", (event) => {
 });
 
 
+    }
+
+    body.append(generatedGridContainer);
+}
+
+
+
+
+
+
 
 
 
@@ -73,24 +75,10 @@ resetButton.textContent = "Reset";
 
 resetButton.addEventListener("click", (event) => {
 
-    const itemToRemove  = document.getElementById("#container");
-    while (itemToRemove.firstChild){
-        itemToRemove.removeChild(itemToRemove.firstChild );
-    }
-    //This changes deadCells to liveCells but needs to the overall gridSize. To Revist later
-
-    resetGrid.forEach(element => {
-        console.log(element.classList);
-        element.remove();
-        /*
-        element.classList.replace("deadCells", "liveCells");
-        element.style.backgroundColor = 'white';
-        */
-    });
-
-
-
-
+    generatedGridContainer.remove();
+    makeGrid();
+  
+    
 });
 
 body.append(resetButton);
