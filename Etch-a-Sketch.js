@@ -1,5 +1,6 @@
 //Global Variables
 let gridSize, cellsPerRow, gridCellDimension, generatedGridContainer;
+let overallBrightness = 1.0;
 
 function getSize() {
      gridSize = prompt("Hey, how big do you want this thing?");
@@ -21,6 +22,8 @@ makeGrid();
 
 
 function makeGrid() {
+    //Set brightness to default value
+    
     //Get size from user
     gridSize = Math.pow(getSize(), 2);
     //Defining cell dimensions
@@ -45,11 +48,11 @@ function makeGrid() {
 generatedGridContainer.addEventListener("mouseover", (event) => {
     if (event.target.className === "liveCells") {
         event.stopPropagation();
-        event.target.style.backgroundColor = 'black';
+        event.target.style.backgroundColor = randomColor();
         event.target.className = "deadCells";
         event.target.style.minWidth = gridCellDimension;
         event.target.style.minHeight = gridCellDimension;
-
+        event.target.style.filter = `brightness(${decreaseBrightness(overallBrightness)})`;
     }
 
 });
@@ -89,4 +92,26 @@ if (typeof module === 'object') {
     module.exports = getSize();
 }
 
+//Random color clause
 
+function randomColor(){
+    let color = '#';
+    let hexLetters = '0123456789ABCDEF';
+
+    for(i = 0; i < 6; i++){
+
+    color+= hexLetters[Math.floor(Math.random()*16)];    
+    }
+    return color;
+}
+
+//Brightness Clause
+
+function decreaseBrightness(input){
+    input = Math.round(input*10)/10; // To avoid overflow error
+    if(input > 0){
+        input -= 0.1;
+    }
+    overallBrightness = input;
+    return input;
+}
