@@ -77,7 +77,7 @@ resetButton.setAttribute("id", "btn");
 resetButton.textContent = "Reset";
 
 resetButton.addEventListener("click", (event) => {
-
+    overallBrightness = 1;
     generatedGridContainer.remove();
     makeGrid();
   
@@ -108,7 +108,7 @@ function randomColor(){
 //Brightness Clause
 
 function decreaseBrightness(input){
-    input = Math.round(input*10)/10; // To avoid overflow error
+    input = Math.round(input*10)/10; // To avoid overflow error 
     if(input > 0){
         input -= 0.1;
     }

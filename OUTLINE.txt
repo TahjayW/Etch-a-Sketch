@@ -8,7 +8,7 @@ This webpage will consist of the following:
     -Flexbox to make the divs appear as a grid
     -Keep minimal, uniform size of margins/borders
     -Don't use CSS Grid
->Hover effect so that grid divs change color when mouse passes over them
+>Hover effect so that grid divs change color when mouse passes over them DONE
     -However method? Event listeners
     -Change color through background color or assign a class?
 
